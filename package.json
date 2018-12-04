@@ -11,7 +11,7 @@
     "e2e": "ng e2e",
     "test-echo": "echo test",
     "commit": "git-cz",
-    "commitmsg": "validate-commit-msg",
+    "commitmsg": "validate-commit-msg"
   },
   "prettier": {
     "printWidth": 90,
