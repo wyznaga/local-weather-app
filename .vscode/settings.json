@@ -1,5 +1,4 @@
 {
-  "files.autoSave": "onFocusChange",
   "editor.tabSize": 2,
   "editor.rulers": [90, 140],
   "files.trimTrailingWhitespace": true,
@@ -15,7 +14,6 @@
   "git.confirmSync": false,
   "editor.formatOnType": true,
   "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
   "prettier.printWidth": 90,
   "prettier.semi": false,
   "prettier.singleQuote": true,
@@ -25,5 +23,26 @@
   "editor.codeActionsOnSave": {
     "source.organizeImports": true
   },
-  "npm.enableScriptExplorer": true
+  "npm.enableScriptExplorer": true,
+  "auto-close-tag.excludedTags": [
+    "area",
+    "base",
+    "br",
+    "col",
+    "command",
+    "embed",
+    "hr",
+    "img",
+    "input",
+    "keygen",
+    "link",
+    "meta",
+    "param",
+    "source",
+    "track",
+    "wbr",
+    "app",
+    "app-root",
+    "app-current-weather",
+  ]
 }

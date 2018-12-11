@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "test-echo": "echo test",
-    "commit": "git-cz",
+    "commit": "npm run standardize && git-cz && npm run commitmsg",
     "commitmsg": "validate-commit-msg"
   },
   "prettier": {
