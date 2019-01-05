@@ -35,7 +35,7 @@ export class WeatherService {
       city: data.name,
       country: data.sys.country,
       date: data.dt * 1000, // JS needs milliseconds; server returns seconds; hence *1000
-      image: `http://openweathermap.org/img/w/${data.weather[0].icon}.png`,
+      image: `https://openweathermap.org/img/w/${data.weather[0].icon}.png`,
       temperature: this.convertKelvinToFahrenheit(data.main.temp),
       description: data.weather[0].description,
     }
