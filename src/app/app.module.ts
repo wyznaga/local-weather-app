@@ -2,12 +2,14 @@ import {} from '@angular-devkit/build-angular'
 import { HttpClientModule } from '@angular/common/http'
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { AppComponent } from './app.component'
 import { CurrentWeatherComponent } from './current-weather/current-weather.component'
 import { WeatherService } from './weather/weather.service'
+import { MaterialModule } from './material.module'
 @NgModule({
   declarations: [AppComponent, CurrentWeatherComponent],
-  imports: [BrowserModule, HttpClientModule],
+  imports: [BrowserModule, HttpClientModule, BrowserAnimationsModule, MaterialModule],
   providers: [WeatherService],
   bootstrap: [AppComponent],
 })
