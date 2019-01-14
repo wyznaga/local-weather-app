@@ -1,18 +1,14 @@
 <div *ngIf="current">
-  <div>
-    <span>
-      {{current.city}}, {{current.country}}
-    </span>
-    <span>
-      {{current.date | date:'fullDate'}}
-    </span>
+  <div fxLayout="row">
+    <div fxFlex="66%" class="mat-title no-margin">{{current.city}}, {{current.country}}</div>
+    <div fxFlex class="right">{{current.date | date:'fullDate'}}</div>
   </div>
-  <div>
-    <img [src]="current.image" alt="image representing current weather">
-    <span>
-      <!-- &#8457 == degrees F, &#8451 == degrees C -->
-      {{current.temperature | number:'1.0-0'}} &#8457;
-    </span>
+  <div fxLayout="row">
+    <div fxFlex="66%">
+      <img [src]="current.image" alt="image representing current weather">
+    </div>
+      <div fxFlex class="right"> <!-- &#8457 == degrees F, &#8451 == degrees C --> {{current.temperature | number:'1.0-0'}} &#8457;
+    </div>
   </div>
   <div>
     {{current.description}}
