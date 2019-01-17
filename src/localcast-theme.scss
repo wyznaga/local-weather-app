@@ -1,0 +1,20 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$localcast-primary: mat-palette($mat-orange, 300);
+$localcast-accent: mat-palette($mat-light_blue, A400);
+
+$localcast-app-theme: mat-light-theme($localcast-primary, $localcast-accent);
+
+@include angular-material-theme($localcast-app-theme);
+
+
+$localcast-dark-primary: mat-palette($mat-purple, 900);
+$localcast-dark-accent: mat-palette($mat-blue, A700);
+
+$localcast-app-dark-theme: mat-dark-theme($localcast-dark-primary, $localcast-dark-accent);
+
+.dark-theme {
+  @include angular-material-theme($localcast-app-dark-theme);
+}
