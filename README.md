@@ -1,5 +1,4 @@
 # LocalWeatherApp
-[![Waffle.io - Columns and their card count](https://badge.waffle.io/2d262fd3c9ef42753290219bafc5c5ae81e5ce7b7fe8e7a0c4481cd34813d1bc.svg?columns=all)](https://waffle.io/wyznaga/local-weather-app)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.4.
 
