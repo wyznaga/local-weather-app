@@ -11,7 +11,9 @@ import { Component } from '@angular/core'
           Your city, your forecast, right now!
         </div>
       </div>
-      <div fxLayoutAlign="center"><app-city-search></app-city-search></div>
+      <div fxLayoutAlign="center">
+        <app-city-search></app-city-search>
+      </div>
       <div fxLayout="row">
         <div fxFlex></div>
         <mat-card fxFlex="300px">
@@ -31,4 +33,14 @@ import { Component } from '@angular/core'
 })
 export class AppComponent {
   title = 'LocalCast Weather'
+  // currentWeather: ICurrentWeather
+
+  // constructor(private weatherService: WeatherService) {}
+
+  // doSearch(searchValue) {
+  //   const userInput = searchValue.split(',').map(s => s.trim())
+  //   this.weatherService
+  //     .getCurrentWeather(userInput[0], userInput.length > 1 ? userInput[1] : undefined)
+  //     .subscribe(data => (this.currentWeather = data))
+  // }
 }

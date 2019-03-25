@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
-import { Observable } from 'rxjs'
+import { BehaviorSubject, Observable } from 'rxjs'
 import { map } from 'rxjs/operators'
 import { environment } from '../../environments/environment'
 import { ICurrentWeather } from '../interfaces'
@@ -23,13 +23,24 @@ interface ICurrentWeatherData {
 }
 
 export interface IWeatherService {
-  getCurrentWeather(search: string|number, country?: string): Observable<ICurrentWeather>
+  getCurrentWeather(
+    search: string | number,
+    country?: string
+  ): Observable<ICurrentWeather>
 }
 
 @Injectable({
   providedIn: 'root',
 })
-export class WeatherService {
+export class WeatherService implements IWeatherService {
+  currentWeather = new BehaviorSubject<ICurrentWeather>({
+    city: '--',
+    country: '--',
+    date: Date.now(),
+    image: '',
+    temperature: 0,
+    description: '',
+  })
   private transformToICurrentWeather(data: ICurrentWeatherData): ICurrentWeather {
     return {
       city: data.name,
@@ -43,14 +54,13 @@ export class WeatherService {
   private convertKelvinToFahrenheit(kelvin: number): number {
     return kelvin * (9.0 / 5.0) - 459.67 // subtraction necessary to get to 32 degrees
   }
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
   private getCurrentWeatherHelper(uriParams: string): Observable<ICurrentWeather> {
     return this.httpClient
       .get<ICurrentWeatherData>(
-        `${environment.baseUrl}/weather?` +
-          `${uriParams}&appid=${environment.appId}`
-    )
-    .pipe(map(data => this.transformToICurrentWeather(data)))
+        `${environment.baseUrl}/weather?` + `${uriParams}&appid=${environment.appId}`
+      )
+      .pipe(map(data => this.transformToICurrentWeather(data)))
   }
   getCurrentWeather(
     search: string | number,
